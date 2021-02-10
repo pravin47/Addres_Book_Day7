@@ -120,8 +120,21 @@ class CreateContact {
 
 			}
 
+		} else {
+			System.out.println("This Name Does Not Exist");
 		}
+	}
 
+	public static void delete() {
+		System.out.println("Enter The First Name You Want To Delete");
+		String delete = sc.next();
+		boolean check1 = book.contains(delete);
+		if (check1 == true) {
+			System.out.println("Contact Deleted Successfully");
+			book.clear();
+		} else {
+			System.out.println("This Name Does Not Exit");
+		}
 	}
 
 }
@@ -137,7 +150,8 @@ public class AddressBook extends CreateContact {
 			System.out.println("1 Add Contact");
 			System.out.println("2 Show The All Contact");
 			System.out.println("3 For Edit Contact");
-			System.out.println("4 Exit");
+			System.out.println("4 For Delete Contact");
+			System.out.println("5 Exit");
 			int choice = sc.nextInt();
 			switch (choice) {
 
@@ -154,8 +168,12 @@ public class AddressBook extends CreateContact {
 				break;
 
 			case 4:
-				ans = false;
+				delete();
+				break;
 
+			case 5:
+				ans = false;
+				break;
 			}
 
 		}
