@@ -156,9 +156,16 @@ public class AddressBook extends CreateContact {
 			switch (choice) {
 
 			case 1:
-				addNewContact();
-				break;
+				System.out.println("Entet the First Name It Will Check Exist Or Not");
+				String uniq = sc.next();
+				boolean check = book.contains(NewContact.fName);
+				if (check == true) {
 
+					System.out.println("This Name Is All Ready Exist Please Enter Anathor Name");
+				} else {
+					addNewContact();
+					break;
+				}
 			case 2:
 				show();
 				break;
